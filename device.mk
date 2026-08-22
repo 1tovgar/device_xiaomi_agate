@@ -215,15 +215,16 @@ PRODUCT_PACKAGES += \
     SettingsResOverlayAgate \
     SettingsProviderResOverlayAgate \
     SystemUIOverlayAgate \
-    WifiOverlay \
     FrameworksResOverlayAgate \
-    TetheringResOverlayAgate \
     Launcher3QuickStepOverlayAgate
+
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayAgate \
     LineageSDKOverlayAgate \
     LineageSettingsOverlayAgate
+
+$(call inherit-product, hardware/mediatek/overlay/mssi.mk)
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -247,6 +248,9 @@ PRODUCT_COPY_FILES += \
 # Parts
 PRODUCT_PACKAGES += \
     XiaomiParts
+
+# Platform
+TARGET_BOARD_PLATFORM := mt6893
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -318,6 +322,9 @@ include hardware/mediatek/configs/properties/vendor_logtag.mk
 # Radio
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/rsc,$(TARGET_COPY_OUT_VENDOR)/etc/rsc)
+
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
 
 # Rootdir
 PRODUCT_PACKAGES += \
