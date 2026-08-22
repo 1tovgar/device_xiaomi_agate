@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/xiaomi/amber
+LOCAL_PATH := device/xiaomi/agate
 
 # Project ID Quota
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
@@ -196,6 +196,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
     $(LOCAL_PATH)/configs/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
+#Init
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):libinit_xiaomi_agate)
+
 # Keymaster
 PRODUCT_PACKAGES += \
     libkeymaster4_1support.vendor \
@@ -233,13 +236,13 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
-    SettingsResOverlayAmber \
-    SystemUIOverlayAmber \
+    SettingsResOverlayAgate \
+    SystemUIOverlayAgate \
     WifiOverlay \
-    CarrierConfigOverlayAmber \
-    FrameworksResOverlayAmber \
-    TelephonyResOverlayAmber \
-    TetheringResOverlayAmber
+    CarrierConfigOverlayAgate \
+    FrameworksResOverlayAgate \
+    TelephonyResOverlayAgate \
+    TetheringResOverlayAgate
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
@@ -425,4 +428,4 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/xiaomi/amber/amber-vendor.mk)
+$(call inherit-product, vendor/xiaomi/agate/agate-vendor.mk)

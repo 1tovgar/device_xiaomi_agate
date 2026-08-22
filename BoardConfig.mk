@@ -39,7 +39,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a55
 ZYGOTE_FORCE_64 := true
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := amber
+TARGET_BOOTLOADER_BOARD_NAME := agate
 TARGET_NO_BOOTLOADER := true
 
 # Display
@@ -50,10 +50,6 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
     vendor/lineage/config/device_framework_matrix.xml
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_amber
-TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_amber
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
@@ -70,8 +66,7 @@ BOARD_KERNEL_CMDLINE := \
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
-BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(DEVICE_PATH)-kernel/vendor-modules/*.ko)
+BOARD_PREBUILT_DTBOIMAGE := prebuilts/dtbo.img
 
 BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE)
 BOARD_MKBOOTIMG_ARGS += --dtb_offset $(BOARD_DTB_OFFSET)
@@ -80,16 +75,13 @@ BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
 
-BOARD_KERNEL_IMAGE_NAME := Image
-TARGET_KERNEL_CONFIG := amber_user_defconfig
-TARGET_KERNEL_SOURCE := $(DEVICE_PATH)-kernel/kernel-headers
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+TARGET_KERNEL_CONFIG := agate_defconfig
+TARGET_KERNEL_SOURCE := kernel/xiaomi/agate
 
 # NFC
 DEVICE_MANIFEST_SKUS += nfc
 DEVICE_MANIFEST_NFC_FILES := $(DEVICE_PATH)/manifest_nfc.xml
-
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -183,4 +175,4 @@ WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit the proprietary files
-include vendor/xiaomi/amber/BoardConfigVendor.mk
+include vendor/xiaomi/agate/BoardConfigVendor.mk

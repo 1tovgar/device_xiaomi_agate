@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_amber.mk
+    $(LOCAL_DIR)/lineage_agate.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_amber-user \
-    lineage_amber-userdebug \
-    lineage_amber-eng
+    lineage_agate-user \
+    lineage_agate-userdebug \
+    lineage_agate-eng

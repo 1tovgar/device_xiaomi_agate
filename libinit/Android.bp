@@ -5,7 +5,7 @@
 //
 
 cc_library_static {
-    name: "libinit_xiaomi_amber",
+    name: "libinit_xiaomi_agate",
     srcs: [
         "libinit_variant.cpp",
         "libinit_utils.cpp",
@@ -13,12 +13,15 @@ cc_library_static {
     whole_static_libs: ["libbase"],
     export_include_dirs: ["include"],
     recovery_available: true,
+    include_dirs: [
+        "system/core/init",
+    ],
 }
 
 cc_library_static {
-    name: "init_xiaomi_amber",
-    srcs: ["init_xiaomi_amber.cpp"],
-    whole_static_libs: ["libinit_xiaomi_amber"],
+    name: "init_xiaomi_agate",
+    srcs: ["init_xiaomi_agate.cpp"],
+    whole_static_libs: ["libinit_xiaomi_agate"],
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }

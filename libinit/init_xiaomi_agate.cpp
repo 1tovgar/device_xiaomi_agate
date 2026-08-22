@@ -9,20 +9,20 @@
 
 #include "vendor_init.h"
 
-static const variant_info_t amber_info = {
+static const variant_info_t agate_info = {
     .hwc_value = "",
-    .sku_value = "amber",
+    .sku_value = "agate",
 
     .brand = "Xiaomi",
-    .device = "amber",
-    .mod_device = "amber_global",
+    .device = "agate",
+    .mod_device = "agate_global",
     .marketname = "Xiaomi 11T",
     .model = "21081111RG",
-    .build_fingerprint = "Xiaomi/amber_global/amber:12/SP1A.210812.016/V816.0.3.0.UKWMIXM:user/release-keys",
+    .build_fingerprint = "Xiaomi/agate_global/agate:12/SP1A.210812.016/V816.0.17.0.UKWMIXM:user/release-keys",
 };
 
 static const std::vector<variant_info_t> variants = {
-    amber_info,
+    agate_info,
 };
 
 void vendor_load_properties() {
