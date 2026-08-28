@@ -30,8 +30,6 @@ lib_fixups: lib_fixups_user_type = {
 }
 
 blob_fixups: blob_fixups_user_type = {
-    'system_ext/lib64/libimsma.so': blob_fixup()
-        .add_needed('libshim_sink.so'),
     
     'vendor/lib/hw/audio.primary.mt6893.so': blob_fixup()
         .replace_needed('libalsautils.so', 'libalsautilsv2.so')
@@ -84,12 +82,13 @@ blob_fixups: blob_fixups_user_type = {
     ),
 
     'vendor/bin/mnld': blob_fixup()
-        .replace_needed('libsensorndkbridge.so', 'libsensorndkbridge-v30.so'),
+        .replace_needed('libsensorndkbridge.so', 'libsensorndkbridge-v30.so')
+        .replace_needed('libmnl.so', 'libmnl_mtk.so'),
 
     ('vendor/lib64/libaalservice.so', 'vendor/lib/libaalservice.so'): blob_fixup()
         .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so'),
 
-    'vendor/lib64/mt6893/libmnl.so': blob_fixup()
+    'vendor/lib64/mt6893/libmnl_mtk.so': blob_fixup()
         .add_needed('libcutils.so'),
 
     'system_ext/lib64/libsource.so': blob_fixup()
@@ -110,6 +109,16 @@ blob_fixups: blob_fixups_user_type = {
         .clear_symbol_version('AHardwareBuffer_lock')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+
+    'vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml': blob_fixup()
+        .regex_replace('1.1', '1.2'),
+    
+    'vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service': blob_fixup()
+        .replace_needed('libutils.so', 'libutils-v32.so')
+        .replace_needed('libhidlbase.so', 'libhidlbase-v32.so'),
+
+    'vendor/bin/hw/mtkfusionrild' : blob_fixup()
+        .add_needed('libutils-v32.so'),
     
 }  # fmt: skip
 
