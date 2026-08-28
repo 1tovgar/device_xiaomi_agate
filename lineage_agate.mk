@@ -24,6 +24,6 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="agate 12 SP1A.210812.016 V816.0.17.0.UKWMIXM release-keys"
-
-BUILD_FINGERPRINT := Xiaomi/agate_global/agate:12/SP1A.210812.016/V816.0.17.0.UKWMIXM:user/release-keys
+    BuildFingerprint=Xiaomi/agate_global/agate:12/SP1A.210812.016/V816.0.17.0.UKWMIXM:user/release-keys \
+    DeviceProduct=agate \
+    SystemName=agate
