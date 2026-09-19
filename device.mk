@@ -288,6 +288,7 @@ $(call soong_config_set,power_libperfmgr,mode_extension_lib, //$(LOCAL_PATH):lib
 
 PRODUCT_PACKAGES += \
     android.hardware.power-service.lineage-libperfmgr \
+    libperfmgr \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub \
     libperfctl_vendor \
     libmtkperf_client_vendor \
@@ -335,11 +336,14 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
+    hardware/google/pixel/power-libperfmgr \
+    hardware/google/pixel/pixelstats \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client \
     hardware/mediatek/wlan/wifi_hal \
-    hardware/xiaomi
+    hardware/xiaomi \
+    vendor/xiaomi/agate
 
 # Sku properties
 PRODUCT_COPY_FILES += \
@@ -347,7 +351,8 @@ PRODUCT_COPY_FILES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.mediatek
+    android.hardware.thermal-service.mediatek \
+    pixelatoms-cpp
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
