@@ -1,1 +1,2 @@
 hal_client_domain(surfaceflinger, hal_mtk_mmagent)
+allow surfaceflinger ion_device:chr_file rw_file_perms;

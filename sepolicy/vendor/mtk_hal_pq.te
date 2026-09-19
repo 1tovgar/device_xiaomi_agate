@@ -1,1 +1,2 @@
 r_dir_file(mtk_hal_pq, vendor_sysfs_display)
+allow mtk_hal_pq ion_device:chr_file rw_file_perms;

@@ -179,6 +179,7 @@ PRODUCT_ENABLE_UFFD_GC := true
 # Light
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
+$(call soong_config_set_bool,libion,legacy_impl,true)
 
 # Lineage Health
 PRODUCT_PACKAGES += \

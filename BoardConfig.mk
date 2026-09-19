@@ -189,3 +189,7 @@ WIFI_FEATURE_SUPPLICANT_11AX := true
 include vendor/xiaomi/agate/BoardConfigVendor.mk
 #include vendor/certification/BoardConfig.mk
 #-include vendor/lineage-priv/keys/keys.mk
+SELINUX_IGNORE_NEVERALLOWS := true
+
+include device/lineage/sepolicy/libion/sepolicy.mk 
+
