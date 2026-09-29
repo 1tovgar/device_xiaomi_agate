@@ -8,9 +8,6 @@ DEVICE_PATH := device/xiaomi/agate
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := agate,agatein,amber
 
-# Kernel
-TARGET_KERNEL_VERSION := 4.19
-
 # Display
 TARGET_SCREEN_DENSITY := 440
 
