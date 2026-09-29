@@ -1,0 +1,9 @@
+type vendor_fingerprint_sysfs, sysfs_type, fs_type;
+type vendor_hal_fingerprint_hwservice_xiaomi, hwservice_manager_type;
+
+add_hwservice(hal_fingerprint_default, vendor_hal_fingerprint_hwservice_xiaomi)
+
+rw_dir_file(hal_fingerprint_default, sysfs_wakeup)
+rw_dir_file(hal_fingerprint_default, vendor_fingerprint_sysfs)
+
+set_prop(hal_fingerprint_default, vendor_fingerprint_prop)

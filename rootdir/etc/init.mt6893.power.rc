@@ -1,0 +1,189 @@
+on early-init
+    # Boot perf tuning
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "performance"
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor "performance"
+
+on property:init.svc.vendor.charger=running
+    # Enable UFS powersaving
+    write /sys/devices/platform/11270000.ufshci/clkgate_enable 1
+
+    # Force Powersave Governor
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "powersave"
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor "powersave"
+
+    # Keep one LITTLE and one big
+    write /sys/devices/system/cpu/cpu1/online 0
+    write /sys/devices/system/cpu/cpu2/online 0
+    write /sys/devices/system/cpu/cpu3/online 0
+    write /sys/devices/system/cpu/cpu4/online 0
+    write /sys/devices/system/cpu/cpu5/online 0
+    write /sys/devices/system/cpu/cpu7/online 0
+
+on init
+    # Disable UFS powersaving
+    write /sys/devices/platform/11270000.ufshci/clkgate_enable 0
+
+    # Boot time FS tuning
+    write /sys/block/mmcblk0/queue/iostats 0
+    write /sys/block/mmcblk0/queue/nr_requests 256
+    write /sys/block/sda/queue/iostats 0
+    write /sys/block/sdb/queue/iostats 0
+    write /sys/block/sdc/queue/iostats 0
+    write /sys/block/sda/queue/nr_requests 256
+    write /sys/block/sdb/queue/nr_requests 256
+    write /sys/block/sdc/queue/nr_requests 256
+
+    # update cpus for cpuset cgroup
+    write /dev/cpuset/top-app/cpus 0-7
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/background/cpus 0-2
+    write /dev/cpuset/system-background/cpus 0-3
+    write /dev/cpuset/restricted/cpus 0-3
+    write /dev/cpuset/camera-daemon/cpus 0-7
+
+    # Disable Kernel Logging
+    write /proc/sys/kernel/printk_devkmsg off
+
+    # fs
+    write /dev/sys/fs/by-name/userdata/iostat_enable 0
+    write /dev/sys/fs/by-name/userdata/cp_interval 6000
+    write /dev/sys/fs/by-name/userdata/gc_urgent_sleep_time 500
+
+    # VM
+    write /proc/sys/vm/dirty_expire_centisecs 3000
+    write /proc/sys/vm/dirty_background_ratio 10
+
+on enable-low-power
+    # zram
+    write /proc/sys/vm/page-cluster 0
+    write /sys/kernel/mm/swap/vma_ra_enabled true
+    write /sys/block/zram0/comp_algorithm lz4
+    swapon_all /vendor/etc/fstab.mt6893
+
+    # Enable UFS Powersaving
+    write /sys/devices/platform/11270000.ufshci/clkgate_enable 1
+
+    # End boot time tuning
+    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "schedutil"
+    write /sys/devices/system/cpu/cpufreq/policy7/scaling_governor "schedutil"
+
+    # Runtime FS tuning
+    # we should adjust the setting upon boot_complete for runtime performance
+    write /sys/block/mmcblk0/queue/read_ahead_kb 512
+    write /sys/block/mmcblk0/queue/nr_requests 64
+    write /sys/block/sda/queue/read_ahead_kb 512
+    write /sys/block/sdb/queue/read_ahead_kb 512
+    write /sys/block/sdc/queue/read_ahead_kb 512
+    write /sys/block/sda/queue/nr_requests 64
+    write /sys/block/sdb/queue/nr_requests 64
+    write /sys/block/sdc/queue/nr_requests 64
+    write /sys/block/dm-0/queue/read_ahead_kb 128
+    write /sys/block/dm-1/queue/read_ahead_kb 128
+    write /sys/block/dm-2/queue/read_ahead_kb 128
+    write /sys/block/dm-3/queue/read_ahead_kb 128
+    write /sys/block/dm-4/queue/read_ahead_kb 128
+    write /sys/block/dm-5/queue/read_ahead_kb 128
+
+    # sched
+    write /proc/sys/kernel/sched_migration_cost_ns 200000
+    write /proc/sys/kernel/sched_util_clamp_max 1024
+
+    # Reclaim tuning
+    write /proc/sys/vm/watermark_scale_factor 10
+    write /proc/sys/vm/vfs_cache_pressure 100
+
+    # GED tuning
+    write /sys/kernel/ged/hal/dvfs_margin_value 130
+    write /sys/kernel/ged/hal/timer_base_dvfs_margin 50
+    write /sys/kernel/ged/hal/custom_upbound_gpu_freq 0
+    write /sys/kernel/ged/hal/custom_boost_gpu_freq 0
+    write /sys/module/ged/parameters/gpu_cust_boost_freq 0
+    write /sys/module/ged/parameters/boost_amp 0
+    write /sys/module/ged/parameters/deboost_reduce 0
+    write /sys/module/ged/parameters/ged_smart_boost 1
+
+    # Utilization Clamping
+    # Tuning
+    write /proc/sys/kernel/sched_util_clamp_min_rt_default 0
+    write /proc/sys/kernel/sched_util_clamp_min 0
+
+    # rt
+    write /dev/cpuctl/rt/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/rt/cpu.uclamp.max max
+    write /dev/cpuctl/rt/cpu.uclamp.min 0
+    write /dev/cpuctl/rt/cpu.shares 20480
+
+    # system
+    write /dev/cpuctl/system/cpu.shares 20480
+
+    # Configure clamps for standard task groups.
+    # system-background
+    write /dev/cpuctl/system-background/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/system-background/cpu.uclamp.max 40
+    write /dev/cpuctl/system-background/cpu.uclamp.min 0
+    write /dev/cpuctl/system-background/cpu.shares 1024
+
+    # background
+    write /dev/cpuctl/background/cpu.uclamp.latency_sensitive 0
+    write /dev/cpuctl/background/cpu.uclamp.max 20
+    write /dev/cpuctl/background/cpu.uclamp.min 0
+    write /dev/cpuctl/background/cpu.shares 1024
+
+    # foreground
+    write /dev/cpuctl/foreground/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/foreground/cpu.uclamp.max max
+    write /dev/cpuctl/foreground/cpu.uclamp.min 0
+    write /dev/cpuctl/foreground/cpu.shares 20480
+
+    # top-app
+    write /dev/cpuctl/top-app/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/top-app/cpu.uclamp.max max
+    write /dev/cpuctl/top-app/cpu.uclamp.min 0
+    write /dev/cpuctl/top-app/cpu.shares 20480
+
+    # nnapi-hal
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.max max
+    write /dev/cpuctl/nnapi-hal/cpu.uclamp.min 0
+    write /dev/cpuctl/nnapi-hal/cpu.shares 20480
+
+    # camera-daemon
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.max max
+    write /dev/cpuctl/camera-daemon/cpu.uclamp.min 0
+    write /dev/cpuctl/camera-daemon/cpu.shares 20480
+
+    # dex2oat
+    write /dev/cpuctl/dex2oat/cpu.uclamp.latency_sensitive 1
+    write /dev/cpuctl/dex2oat/cpu.uclamp.max max
+    write /dev/cpuctl/dex2oat/cpu.uclamp.min 0
+    write /dev/cpuctl/dex2oat/cpu.shares 1024
+
+    # Force SurfaceFlinger uclamp floor
+    write /dev/cpuctl/system/cpu.uclamp.min 128
+    write /dev/cpuctl/system/cpu.uclamp.max 768
+
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
+on property:sys.boot_completed=1
+    trigger enable-low-power
+
+service vendor.gralloc-4-0 /vendor/bin/hw/android.hardware.graphics.allocator@4.0-service-mediatek
+    class hal animation
+    interface android.hardware.graphics.allocator@4.0::IAllocator default
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles ProcessCapacityHigh HighPerformance
+    override
+
+service vendor.hwcomposer-2-3 /vendor/bin/hw/android.hardware.graphics.composer@2.3-service
+    class hal animation
+    user system
+    group graphics drmrpc
+    capabilities SYS_NICE
+    onrestart restart surfaceflinger
+    task_profiles HighPerformance
+    override

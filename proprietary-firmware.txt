@@ -1,16 +1,15 @@
-# Unpinned blobs from agate_global-user 13 TP1A.220624.014 V14.0.6.0.TKWMIXM release-keys
+# Unpinned blobs from agate_global-user 12 SP1A.210812.016 V816.0.17.0.UKWMIXM release-keys
 
 audio_dsp.img;AB
 cam_vpu1.img;AB
 cam_vpu2.img;AB
 cam_vpu3.img;AB
-dtbo.img;AB
 dpm.img;AB
+dtbo.img;AB
 gz.img;AB
 lk.img;AB
 mcupm.img;AB
 md1img.img;AB
-mitee.img;AB
 pi_img.img;AB
 preloader_agate.bin:preloader_raw.img;AB
 scp.img;AB

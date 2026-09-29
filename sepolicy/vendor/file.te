@@ -1,0 +1,15 @@
+# Camera
+type vendor_camera_data_file, data_file_type, file_type;
+type camera_persist_file, file_type;
+
+# Display
+type vendor_sysfs_display, fs_type, sysfs_type;
+
+# GPU
+type vendor_sysfs_gpu, fs_type, sysfs_type;
+
+# Power
+type vendor_touchfeature_device, dev_type;
+
+# Triggers
+type vendor_gamekey_device, dev_type;

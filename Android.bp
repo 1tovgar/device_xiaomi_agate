@@ -1,7 +1,29 @@
 //
-// SPDX-FileCopyrightText: The LineageOS Project
+// Copyright (C) 2023 The LineageOS Project
+//
 // SPDX-License-Identifier: Apache-2.0
 //
 
 soong_namespace {
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_mms_interface",
+    interfaces: [
+        "vendor.mediatek.hardware.mms@1.0::IMms",
+        "vendor.mediatek.hardware.mms@1.1::IMms",
+        "vendor.mediatek.hardware.mms@1.2::IMms",
+        "vendor.mediatek.hardware.mms@1.3::IMms",
+        "vendor.mediatek.hardware.mms@1.4::IMms",
+        "vendor.mediatek.hardware.mms@1.5::IMms",
+        "vendor.mediatek.hardware.mms@1.6::IMms",
+    ],
+}
+
+prebuilt_hidl_interfaces {
+    name: "hidl_mmagent_interface",
+    interfaces: [
+        "vendor.mediatek.hardware.mmagent@1.0::IMMAgent",
+        "vendor.mediatek.hardware.mmagent@1.1::IMMAgent",
+    ],
 }

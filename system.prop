@@ -1,0 +1,6 @@
+# Animation override
+persist.sys.activity_anim_perf_override=true
+
+# Camera
+ro.camerax.extensions.enabled=true
+ro.product.mod_device=agate_global
