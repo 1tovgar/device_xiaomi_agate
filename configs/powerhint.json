@@ -47,7 +47,7 @@
         "0"
       ],
       "ResetOnInit": true,
-      "DefaultIndex": 0,
+      "DefaultIndex": 0
     },
     {
       "Name": "CPULittleClusterMaxFreq",
@@ -94,7 +94,7 @@
         "750000",
         "675000",
         "600000",
-        "500000",
+        "500000"
       ],
       "ResetOnInit": true
     },
@@ -143,7 +143,7 @@
         "1046000",
         "902000",
         "700000",
-        "437000",
+        "437000"
       ],
       "ResetOnInit": true
     },
@@ -192,7 +192,7 @@
         "1258000",
         "1108000",
         "921000",
-        "659000",
+        "659000"
       ],
       "ResetOnInit": true
     },
@@ -281,7 +281,7 @@
         "60",
         "50",
         "30",
-        "15",
+        "15"
       ],
       "ResetOnInit": true
     },
@@ -297,7 +297,7 @@
         "50",
         "40",
         "30",
-        "10",
+        "10"
       ],
       "ResetOnInit": true
     },
@@ -460,6 +460,52 @@
       "PowerHint": "EXPENSIVE_RENDERING",
       "Type": "EndHint",
       "Value": "INTERACTION"
+    }
+  ],
+  "AdpfConfig": [
+    {
+      "Name": "OTHER",
+      "PID_On": true,
+      "PID_Po": 0.0,
+      "PID_Pu": 1.0,
+      "PID_I": 0.001,
+      "PID_I_Init": 200,
+      "PID_I_High": 512,
+      "PID_I_Low": 0,
+      "PID_Do": 500.0,
+      "PID_Du": 0.0,
+      "UclampMin_On": false,
+      "UclampMin_Init": 100,
+      "UclampMin_High": 384,
+      "UclampMin_Low": 2,
+      "SamplingWindow_P": 1,
+      "SamplingWindow_I": 0,
+      "SamplingWindow_D": 1,
+      "StaleTimeFactor": 10.0,
+      "ReportingRateLimitNs": 166666666,
+      "TargetTimeFactor": 1.0
+    },
+    {
+      "Name": "GAME",
+      "PID_On": true,
+      "PID_Po": 0.0,
+      "PID_Pu": 1.0,
+      "PID_I": 0.001,
+      "PID_I_Init": 200,
+      "PID_I_High": 512,
+      "PID_I_Low": 0,
+      "PID_Do": 500.0,
+      "PID_Du": 0.0,
+      "UclampMin_On": false,
+      "UclampMin_Init": 100,
+      "UclampMin_High": 512,
+      "UclampMin_Low": 2,
+      "SamplingWindow_P": 1,
+      "SamplingWindow_I": 0,
+      "SamplingWindow_D": 1,
+      "StaleTimeFactor": 10.0,
+      "ReportingRateLimitNs": 83333333,
+      "TargetTimeFactor": 1.0
     }
   ]
 }
