@@ -3,6 +3,12 @@ ro.vendor.audio.gain.support=true
 ro.vendor.audio.ns.support=true
 ro.vendor.audio.zoom.support=true
 
+# Bluetooth
+bluetooth.device.default_name=Xiaomi 11T
+
+# USB
+vendor.usb.product_string=Xiaomi 11T
+
 # Fingerprint
 persist.vendor.fingerprint.sensor_location=1080|960|200|local:0
 

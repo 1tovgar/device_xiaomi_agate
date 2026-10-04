@@ -12,6 +12,7 @@ TARGET_OTA_ASSERT_DEVICE := agate,agatein,amber
 TARGET_SCREEN_DENSITY := 440
 
 # Properties
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Security Patch Level
