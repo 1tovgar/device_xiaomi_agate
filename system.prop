@@ -4,3 +4,8 @@ persist.sys.activity_anim_perf_override=true
 # Camera
 ro.camerax.extensions.enabled=true
 ro.product.mod_device=agate_global
+
+# Surface Flinger
+persist.sys.sf.disable_blurs=0
+ro.sf.blurs_are_expensive=0
+ro.surface_flinger.supports_background_blur=1

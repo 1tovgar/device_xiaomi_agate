@@ -175,6 +175,9 @@ ro.vendor.audio.dolby.dax.support=true
 drm.service.enabled=true
 ro.netflix.bsp_rev=MTK6893-32816-1
 
+# Fingerprint
+persist.vendor.fingerprint.sensor_location=1080|960|200|local:0
+
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
