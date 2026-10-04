@@ -395,6 +395,7 @@ PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek \
     android.hardware.usb.gadget-service.mediatek
 
+$(call soong_config_set_bool,android_hardware_mediatek_usb,audio_accessory_supported,true)
 $(call soong_config_set_bool,mediatek_gadget,use_custom_usb_gadget_rc,true)
 
 # Vibrator
@@ -411,6 +412,7 @@ $(call soong_config_set,wpa_supplicant_8,board_wlan_mediatek_stability,true)
 
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
+    hostapd \
     wlan_assistant \
     wpa_supplicant \
     hostapd

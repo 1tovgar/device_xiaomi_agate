@@ -39,10 +39,6 @@
         <transport>hwbinder</transport>
         <fqname>@4.1::IKeymasterDevice/default</fqname>
     </hal>
-    <hal override="true">
-        <name>android.hardware.nfc</name>
-        <transport>hwbinder</transport>
-    </hal>
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
