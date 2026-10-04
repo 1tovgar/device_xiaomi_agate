@@ -1,7 +1,12 @@
 #
-# SPDX-FileCopyrightText: The LineageOS Project
+# Copyright (C) 2023 The LineageOS Project
+#
 # SPDX-License-Identifier: Apache-2.0
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_agate.mk
+    $(LOCAL_DIR)/halcyon_agate.mk
+
+COMMON_LUNCH_CHOICES := \
+    halcyon_agate-userdebug \
+    halcyon_agate-user
