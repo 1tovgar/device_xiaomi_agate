@@ -10,7 +10,6 @@ gz.img;AB
 lk.img;AB
 mcupm.img;AB
 md1img.img;AB
-mitee.img;AB
 pi_img.img;AB
 preloader_agate.bin:preloader_raw.img;AB
 scp.img;AB
