@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-SPDX-FileCopyrightText: 2023-2024 The LineageOS Project
-SPDX-License-Identifier: Apache-2.0
+     SPDX-FileCopyrightText: The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.android.systemui.overlay.agate">
+    package="com.android.systemui.overlay.agate">
 
-  <overlay android:targetPackage="com.android.systemui"
-           android:isStatic="true"
-           android:priority="100"/>
-  </manifest>
+    <overlay
+      android:targetPackage="com.android.systemui"
+      android:isStatic="true"
+      android:priority="100"/>
+</manifest>
