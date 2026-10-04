@@ -210,8 +210,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayAgate \
-    LineageSDKOverlayAgate \
-    LineageSettingsOverlayAgate
+    SettingsResOverlayAgate \
+    SystemUIOverlayAgate
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
