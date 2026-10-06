@@ -18,6 +18,8 @@ android_app {
     privileged: true,
 
     static_libs: [
-        "org.lineageos.settings.resources",
+        "androidx.core_core",
+        "androidx.preference_preference",
+        "SettingsLib",
     ],
 }
