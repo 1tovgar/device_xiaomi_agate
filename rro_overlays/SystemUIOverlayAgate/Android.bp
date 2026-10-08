@@ -4,6 +4,6 @@
 //
 
 runtime_resource_overlay {
-    name: "Launcher3QuickStepOverlayAgate",
+    name: "SystemUIOverlayAgate",
     product_specific: true,
 }
