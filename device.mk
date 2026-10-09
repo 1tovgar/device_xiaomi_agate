@@ -131,9 +131,6 @@ PRODUCT_PACKAGES += \
     com.android.hardware.drm.clearkey
 
 # Dolby Atmos
-PRODUCT_PACKAGES += \
-    DolbyManager
-
 $(call inherit-product, hardware/dolby/dolby.mk)
 
 # Dynamic Partitions
