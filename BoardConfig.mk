@@ -41,7 +41,7 @@ TARGET_DYNAMIC_64_32_MEDIASERVER := true
 TARGET_DYNAMIC_64_32_DRMSERVER := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := agate,amber
+TARGET_OTA_ASSERT_DEVICE := agate,agatein,amber
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
