@@ -303,7 +303,7 @@ PRODUCT_PACKAGES += \
     PowerOffAlarm
 
 # Properties
-include hardware/mediatek/configs/properties/vendor_logtag.mk
+-include hardware/mediatek/configs/properties/vendor_logtag.mk
 
 # Radio
 PRODUCT_COPY_FILES += \
