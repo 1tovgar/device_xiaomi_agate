@@ -134,9 +134,6 @@ PRODUCT_PACKAGES += \
 # Dolby Atmos
 PRODUCT_PACKAGES += \
     LunarisDolby
-
-$(call inherit-product, hardware/dolby/dolby.mk)
-
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
