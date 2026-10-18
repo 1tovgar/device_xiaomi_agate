@@ -15,12 +15,12 @@ $(call inherit-product, device/xiaomi/agate/device.mk)
 $(call inherit-product, vendor/alpha/config/common_full_phone.mk)
 
 TARGET_HAS_UDFPS := false
-TARGET_SUPPORTS_BLUR := 2
+TARGET_SUPPORTS_BLUR := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
 TARGET_INCLUDE_SIMPLE_TUNE := true
 TARGET_SUPPORTS_QUICK_TAP := true
-#TARGET_SUPPORTS_CALL_RECORDING := false # https://github.com/crdroidandroid/android_vendor_bcr.git
+TARGET_SUPPORTS_CALL_RECORDING := false
 TARGET_INCLUDE_STOCK_ARCORE := true
 
 
