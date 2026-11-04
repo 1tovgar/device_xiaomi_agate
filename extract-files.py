@@ -41,6 +41,18 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/etc/init/android.hardware.neuralnetworks@1.3-service-mtk-neuron.rc'): blob_fixup()
         .regex_replace('start', 'enable'),
 
+    'vendor/lib64/egl/mt6893/libGLES_mali.so': blob_fixup()
+        .add_needed('libgpud_shim.so'),
+
+    'vendor/lib64/egl/libGLESr32p1.so': blob_fixup()
+        .replace_needed('libgpud.so', 'libgpud_stock.so'),
+
+    'vendor/lib64/libOpenCL.so': blob_fixup()
+        .binary_regex_replace(b'/system/vendor/lib64/egl/libGLES_mali.so', b'/system/vendor/lib64/egl/libGLESr32p1.so'),
+
+    ('vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron', 'vendor/lib/libnvram.so', 'vendor/lib64/libnvram.so', 'vendor/lib64/libsysenv.so'): blob_fixup()
+        .add_needed('libbase_shim.so'),
+
     'vendor/etc/vintf/manifest/manifest_media_c2_V1_2_default.xml': blob_fixup()
         .regex_replace('1.1', '1.2'),
 
