@@ -928,9 +928,8 @@ vendor/lib64/mt6893/libarm_egl_properties_sysprop.so;SYMLINK=vendor/lib64/libarm
 vendor/lib64/mt6893/libarm_gralloc_properties_sysprop.so;SYMLINK=vendor/lib64/libarm_gralloc_properties_sysprop.so|fb17db02afd034c6b08dfa4b18463559de6deb65
 vendor/lib64/mt6893/libarm_mali_config_sysprops.so;SYMLINK=vendor/lib64/libarm_mali_config_sysprops.so|48a5d794603ac52616763d26c211a6019fc1e0a0
 
-# Display (Mali) - stock r32p1, OpenCL only
-vendor/lib64/egl/mt6893/libGLES_mali.so:vendor/lib64/egl/libGLESr32p1.so;FIX_SONAME|5308e3621621e58d9e482a163646eff872116863|ebcb03e79336ed9806415737c1850e4654e77591
-vendor/lib64/libgpud.so:vendor/lib64/libgpud_stock.so;FIX_SONAME|073004c163b99f50b3005849555f8b04cbfa0d8b|1e6e88816e73a523493c8ca39c19f3e6778eb2d2
+# Display (Mali) - stock OpenCL ICD loader, behind the libOpenCL shim
+vendor/lib64/libOpenCL.so:vendor/lib64/libOpenCL_real.so;FIX_SONAME|988112f43f01ab0e4b420852a268015a6f451e17|506ccb569c5fd34e3675bcfa62d1bf0ba0083664
 
 # DRM
 vendor/bin/hw/android.hardware.drm@1.4-service.widevine
@@ -1101,7 +1100,6 @@ vendor/lib64/APUWareApusysServer.so
 vendor/lib64/APUWareHmpServer.so
 vendor/lib64/APUWareUtilsServer.so
 vendor/lib64/APUWareXrpServer_v2.so
-vendor/lib64/libOpenCL.so|e8814e2bafc5afb9d8d52a6db38f16ed892cdd31|382d616cc402e2e249d0b7c645307d8df082f45b
 vendor/lib64/libaiselector_cust.so
 vendor/lib64/libapu_mdw.so
 vendor/lib64/libapu_mdw_batch.so

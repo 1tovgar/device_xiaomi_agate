@@ -202,6 +202,7 @@ PRODUCT_COPY_FILES += \
 
 # Mali
 PRODUCT_PACKAGES += \
+    libOpenCL \
     libgpud_shim
 
 # Media
