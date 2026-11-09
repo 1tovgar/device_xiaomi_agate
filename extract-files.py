@@ -90,6 +90,10 @@ blob_fixups: blob_fixups_user_type = {
 
     ('vendor/lib64/mt6893/libcam.hal3a.v3.so', 'vendor/lib64/hw/hwcomposer.mt6893.so'): blob_fixup()
         .add_needed('libprocessgroup_shim.so'),
+
+    ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
+        .replace_needed('libformatter.so', 'libformatter-v31.so'),
+    
 }  # fmt: skip
 
 module = ExtractUtilsModule(
