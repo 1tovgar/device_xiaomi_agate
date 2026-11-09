@@ -1107,7 +1107,7 @@ vendor/lib64/mt6893/libaiselector.so;SYMLINK=vendor/lib64/libaiselector.so
 vendor/lib64/mt6893/libgpudataproducer.so;SYMLINK=vendor/lib64/libgpudataproducer.so
 vendor/lib64/mt6893/libmcv_runtime.mtk.so;SYMLINK=vendor/lib64/libmcv_runtime.mtk.so
 vendor/lib64/mt6893/libmdla_ut.so;SYMLINK=vendor/lib64/libmdla_ut.so
-vendor/lib64/mt6893/libmnl.so;SYMLINK=vendor/lib64/libmnl.so
+vendor/lib64/mt6893/libmnl.so:vendor/lib64/libmnl_mtk.so;FIX_SONAME
 vendor/lib64/mt6893/libneuron_platform.vpu.so;SYMLINK=vendor/lib64/libneuron_platform.vpu.so
 vendor/lib64/mt6893/libneuron_runtime.5.so;SYMLINK=vendor/lib64/libneuron_runtime.5.so
 vendor/lib64/mt6893/libneuron_runtime.so;SYMLINK=vendor/lib64/libneuron_runtime.so
