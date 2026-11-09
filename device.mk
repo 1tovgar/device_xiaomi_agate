@@ -86,7 +86,7 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
 
-$(call inherit-product, vendor/bcr/bcr.mk)
+$(call inherit-product-if-exists, vendor/bcr/bcr.mk)
 
 # Audio (Remote Submix)
 PRODUCT_PACKAGES += \
