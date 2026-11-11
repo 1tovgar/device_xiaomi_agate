@@ -409,5 +409,5 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/wifi/,$(TARGET_COPY_OUT_VENDOR)/etc/wifi)
 
 # Inherit the proprietary files
-$(call inherit-product-if-exists, device/xiaomi/miuicamera-agate/device.mk)
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/MiuiCamera.mk)
 $(call inherit-product, vendor/xiaomi/agate/agate-vendor.mk)

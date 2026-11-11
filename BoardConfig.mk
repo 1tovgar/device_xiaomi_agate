@@ -185,7 +185,7 @@ WIFI_FEATURE_HOSTAPD_11AX := true
 WIFI_FEATURE_SUPPLICANT_11AX := true
 
 # Inherit the proprietary files
--include device/xiaomi/miuicamera-agate/BoardConfig.mk
+-include vendor/xiaomi/miuicamera/BoardConfigMiuiCamera.mk
 include vendor/xiaomi/agate/BoardConfigVendor.mk
 #include vendor/certification/BoardConfig.mk
 #-include vendor/lineage-priv/keys/keys.mk
