@@ -102,7 +102,7 @@ blob_fixups: blob_fixups_user_type = {
     ('vendor/lib64/libcodec2_mtk_vdec.so', 'vendor/lib64/libcodec2_mtk_venc.so'): blob_fixup()
         .replace_needed('libformatter.so', 'libformatter-v31.so'),
     
-    'vendor/lib*/hw/android.hardware.audio@7.0-impl-mediatek.so': blob_fixup()
+    'vendor/lib/hw/android.hardware.audio@7.0-impl-mediatek.so': blob_fixup()
         .replace_needed('android.hardware.audio@7.0-util.so', 'android.hardware.audio@7.0-util.agate.so'),
 }  # fmt: skip
 
