@@ -216,8 +216,8 @@ PRODUCT_PACKAGES += \
     SettingsProviderResOverlayAgate \
     SystemUIOverlayAgate \
     FrameworksResOverlayAgate \
-    Launcher3QuickStepOverlayAgate
-
+    Launcher3QuickStepOverlayAgate \
+    CarrierConfigOverlayAgate
 
 PRODUCT_PACKAGES += \
     LineageApertureOverlayAgate \

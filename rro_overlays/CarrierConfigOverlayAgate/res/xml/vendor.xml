@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Vendor defaults for the CarrierConfig app, applied to every carrier
+     (unfiltered node, appended after carrier-specific files).
+
+     The AOSP defaults hard-disable IMS voice and Wi-Fi calling
+     (carrier_volte_available_bool / carrier_wfc_ims_available_bool), and
+     carriers missing from the AOSP asset set fall back to those defaults.
+     Enable both globally so VoLTE/VoWiFi work for all users; carriers with
+     their own config file still override these keys for that key alone.
+     Same mechanism as CarrierConfigOverlayMT6893, without the per-provider
+     list (the AOSP per-carrier assets handle that).
+
+     NOTE: The keep-raw-values AAPT flag in Android.bp is required for
+     getXml() overlays.
+-->
+<carrier_config_list>
+    <carrier_config>
+        <boolean name="carrier_volte_available_bool" value="true"/>
+        <boolean name="carrier_wfc_ims_available_bool" value="true"/>
+        <boolean name="editable_wfc_mode_bool" value="true"/>
+    </carrier_config>
+</carrier_config_list>

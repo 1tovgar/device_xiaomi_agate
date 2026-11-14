@@ -1,0 +1,12 @@
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "CarrierConfigOverlayAgate",
+    resource_dirs: ["res"],
+    vendor: true,
+    aaptflags: [
+        "--keep-raw-values",
+    ],
+}
