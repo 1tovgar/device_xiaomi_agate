@@ -269,6 +269,8 @@ telephony.lteOnCdmaDevice=1
 import /vendor/etc/rsc/${ro.boot.rsc}/ro.prop
 
 # IMS
+persist.vendor.ims_support=1
+persist.vendor.volte_support=1
 persist.vendor.anr.enhancement=0
 persist.vendor.mtk.volte.enable=1
 persist.vendor.mtk_ct_volte_support=3
