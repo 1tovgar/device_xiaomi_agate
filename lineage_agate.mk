@@ -33,6 +33,31 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildFingerprint=Xiaomi/amber_global/amber:12/SP1A.210812.016/V816.0.17.0.UKWMIXM:user/release-keys \
     DeviceProduct=$(PRODUCT_SYSTEM_NAME)
 
+
+#RisingOS-specific
+RISING_MAINTAINER="tovgar" #lunch
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Mediatek Dimensity 1200" \
+    RisingMaintainer="tovgar"
+
+RISING_MAINTAINER := tovgar
+
+TARGET_ENABLE_BLUR := true
+
+PRODUCT_NO_CAMERA := false
+
+# CORE build flags
+WITH_GMS := true
+TARGET_USES_PICO_GAPPS := true
+
+# VANILLA only build flags
+#WITH_GMS := false
+
+# VANILLA build with MICROG
+#WITH_GMS := false
+#WITH_MICROG := true
+
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
