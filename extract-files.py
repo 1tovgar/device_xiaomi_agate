@@ -23,6 +23,7 @@ namespace_imports = [
     'hardware/mediatek',
     "hardware/mediatek/libmtkperf_client",
     'hardware/xiaomi',
+    'vendor/mediatek/ims'
 ]
 
 
