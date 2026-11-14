@@ -11,13 +11,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/agate/device.mk)
 
-WITH_ADB_INSECURE := true
-
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-# Ensure userdebug builds stay debuggable (overrides common.mk's
-# PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG=true when WITH_ADB_INSECURE is unset).
-PRODUCT_NOT_DEBUGGABLE_IN_USERDEBUG := false
 
 PRODUCT_NAME := lineage_agate
 PRODUCT_DEVICE := agate
