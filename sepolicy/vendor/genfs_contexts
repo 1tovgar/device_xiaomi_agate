@@ -54,7 +54,6 @@ genfscon sysfs /devices/platform/10800000.adsp_core0/wakeup                     
 genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-0051/power_supply/bq2597x-slave/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-0051/wakeup                            u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/1101a000.i2c11/i2c-11/11-005b/wakeup                            u:object_r:sysfs_wakeup:s0
-genfscon sysfs /devices/platform/15020000.imgsys_config/wakeup                                   u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/19030000.vpu_core0/wakeup                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/19031000.vpu_core1/wakeup                                       u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/19032000.vpu_core2/wakeup                                       u:object_r:sysfs_wakeup:s0
