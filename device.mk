@@ -23,8 +23,8 @@ $(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot-service.mediatek \
-    android.hardware.boot-service.mediatek_recovery
+    com.android.hardware.boot \
+    android.hardware.boot-service.default_recovery
 
 PRODUCT_PACKAGES += \
     create_pl_dev \
