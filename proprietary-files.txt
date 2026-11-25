@@ -920,7 +920,7 @@ vendor/etc/gralloc/dpu_aeu.xml|e8d574f08b52281c3186591771d423fbdec0e0d6
 vendor/etc/gralloc/gpu.xml|7bb49923b6773c75c906736d9f528c4c9aa48f74
 vendor/etc/gralloc/vpu.xml|85f81eee3f887a98d404e805d31f9dae7e8affdc
 vendor/etc/mali_platform.config|195cd5817f23a3a013c23ed2cecf0b01ae48a42a
-vendor/lib64/egl/mt6893/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so|6082d2e2864742e1e737c986493884f9d10201f8|1b725e7fa589f2f85bcb9f4709052e10c7629737
+vendor/lib64/egl/mt6893/libGLES_mali.so;SYMLINK=vendor/lib64/egl/libGLES_mali.so|6082d2e2864742e1e737c986493884f9d10201f8|f8d60322fbeef907eaf670e346341001bb702fc0
 vendor/lib64/hw/mt6893/vulkan.mali.so;SYMLINK=vendor/lib64/hw/vulkan.mali.so|6a23d68e967b7584245b4b51e50bc342733fe8bb
 vendor/lib64/libgpud.so|6d27c3fd402b7239f46307c86b7893595aede782|e63bf16aed3d6df02a907415ed45be23dd226e86
 vendor/lib64/mt6893/arm.graphics-V5-ndk.so;SYMLINK=vendor/lib64/arm.graphics-V5-ndk.so|f286ba9e64da6a96e13c6f9dc5deed5e9c7f56cb

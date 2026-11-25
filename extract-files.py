@@ -44,6 +44,9 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/egl/mt6893/libGLES_mali.so': blob_fixup()
         .add_needed('libgpud_shim.so'),
 
+    ('vendor/lib64/libgpud.so', 'vendor/lib64/egl/mt6893/libGLES_mali.so'): blob_fixup()
+        .replace_needed('android.hardware.graphics.common-V5-ndk.so', 'android.hardware.graphics.common-V7-ndk.so'),
+
     ('vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-mtk-neuron', 'vendor/lib/libnvram.so', 'vendor/lib64/libnvram.so', 'vendor/lib64/libsysenv.so'): blob_fixup()
         .add_needed('libbase_shim.so'),
 
