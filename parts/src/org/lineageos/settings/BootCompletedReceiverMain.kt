@@ -12,6 +12,7 @@ import android.content.Intent
 import android.util.Log
 import org.lineageos.settings.thermal.ThermalUtils
 import org.lineageos.settings.gestures.GestureUtils
+import org.lineageos.settings.charging.ChargingProfileUtils
 
 /** Everything begins at boot. */
 class BootCompletedReceiverMain : BroadcastReceiver() {
@@ -23,6 +24,7 @@ class BootCompletedReceiverMain : BroadcastReceiver() {
         Log.i(TAG, "Boot completed, starting services")
         ThermalUtils.getInstance(context).startService()
         GestureUtils.onBootCompleted(context)
+        ChargingProfileUtils.onBootCompleted(context)
     }
 
     companion object {

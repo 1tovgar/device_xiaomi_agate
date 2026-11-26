@@ -3,3 +3,9 @@
 # charging control (/sys/class/power_supply/battery/input_suspend).
 allow hal_lineage_health_default sysfs_power_supply:dir r_dir_perms;
 allow hal_lineage_health_default sysfs_power_supply:file rw_file_perms;
+
+# /sys/class/power_supply and its parent battery dirs are labeled
+# sysfs_batteryinfo on MTK; without search here the HAL cannot reach the
+# sysfs_power_supply files above.
+allow hal_lineage_health_default sysfs_batteryinfo:dir search;
+allow hal_lineage_health_default sysfs_batteryinfo:file r_file_perms;

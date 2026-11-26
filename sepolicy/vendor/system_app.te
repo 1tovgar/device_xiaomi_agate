@@ -1,3 +1,9 @@
 hal_client_domain(system_app, hal_mlipay)
 
 allow system_app vendor_gamekey_device:chr_file r_file_perms;
+
+# XiaomiParts charging profile selector writes charge-pump input current and
+# PD max watt sysfs nodes.
+allow system_app sysfs_batteryinfo:dir search;
+allow system_app sysfs_power_supply:dir search;
+allow system_app sysfs_power_supply:file rw_file_perms;

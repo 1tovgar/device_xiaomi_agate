@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2026 The LineageOS Project
+     SPDX-License-Identifier: Apache-2.0
+-->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/charging_title">
+
+    <ListPreference
+        android:defaultValue="0"
+        android:entries="@array/charging_profile_entries"
+        android:entryValues="@array/charging_profile_values"
+        android:key="charging_profile"
+        android:summary="%s"
+        android:title="@string/charging_profile_title" />
+
+    <Preference
+        android:selectable="false"
+        android:summary="@string/charging_profile_footer" />
+
+</PreferenceScreen>

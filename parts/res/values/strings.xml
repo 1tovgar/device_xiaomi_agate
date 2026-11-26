@@ -19,6 +19,22 @@
     <!-- Xiaomi Parts -->
     <string name="app_name">Xiaomi Parts</string>
 
+    <!-- Charging profiles -->
+    <string name="charging_title">Charging power limit</string>
+    <string name="charging_summary">Cap the charging input power</string>
+    <string name="charging_profile_title">Maximum power</string>
+    <string name="charging_profile_footer">Limits the charge pumps and PD adapter. The actual charging speed also depends on the charger and cable.</string>
+    <string-array name="charging_profile_entries" translatable="false">
+        <item>Default (up to 67 W)</item>
+        <item>33 W</item>
+        <item>18 W</item>
+    </string-array>
+    <string-array name="charging_profile_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal profiles</string>
     <string name="thermal_enable">Use thermal profiles</string>
