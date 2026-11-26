@@ -189,12 +189,20 @@ $(call soong_config_set_bool,libion,legacy_impl,true)
 
 # Lineage Health
 PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
+    vendor.lineage.health-service.default \
+    LineageParts
 
 $(call soong_config_set,lineage_health,charging_control_charging_path,/sys/class/power_supply/battery/input_suspend)
 $(call soong_config_set,lineage_health,charging_control_charging_enabled,0)
 $(call soong_config_set,lineage_health,charging_control_charging_disabled,1)
 $(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
+$(call soong_config_set_bool,lineage_health,charging_control_supports_toggle,true)
+
+# The usb psy's fastcharge_mode calls chg_set_fastcharge_mode() (FV/IEOC vote),
+# while bms/fastcharge_mode only toggles a fuel-gauge flag.
+$(call soong_config_set,lineage_health,fast_charge_node,/sys/class/power_supply/usb/fastcharge_mode)
+$(call soong_config_set,lineage_health,fast_charge_value_none,0)
+$(call soong_config_set,lineage_health,fast_charge_value_fast_charge,1)
 
 # Linker
 PRODUCT_COPY_FILES += \
